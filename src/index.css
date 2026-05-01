@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-warm-50: #fafaf9;
+  --color-warm-100: #f5f5f4;
+  --color-warm-200: #e7e5e4;
+  --color-warm-300: #d6d3d1;
+  --color-warm-400: #a8a29e;
+  --color-warm-500: #78716c;
+  --color-warm-600: #57534e;
+  --color-warm-700: #44403c;
+  --color-warm-800: #292524;
+  --color-warm-900: #1c1917;
+  --color-warm-950: #0c0a09;
+
+  --color-accent-blue: #3b82f6;
+  --color-accent-purple: #8b5cf6;
+  --color-accent-cyan: #22d3ee;
+  --color-accent-emerald: #10b981;
+  --color-accent-rose: #f43f5e;
+  --color-accent-amber: #f59e0b;
+
+  --font-sans: 'Noto Sans KR', sans-serif;
+
+  --shadow-glow-blue: 0 0 20px 0 rgba(59, 130, 246, 0.5);
+  --shadow-glow-purple: 0 0 20px 0 rgba(139, 92, 246, 0.5);
+  --shadow-glow-cyan: 0 0 20px 0 rgba(34, 211, 238, 0.5);
+  --shadow-glow-emerald: 0 0 20px 0 rgba(16, 185, 129, 0.5);
+  --shadow-glow-rose: 0 0 20px 0 rgba(244, 63, 94, 0.5);
+
+  --shadow-premium-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-premium-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-premium-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-accent-purple;
+  }
+  .gradient-text-warm {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-rose to-accent-amber;
+  }
+  .hero-orb {
+    @apply absolute rounded-full filter blur-3xl opacity-30 animate-float;
+  }
+  .grid-overlay {
+    background-image: linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+  }
+  .glass-card {
+    @apply bg-warm-900/40 backdrop-blur-lg border border-warm-800/50 rounded-2xl;
+  }
+  .btn-premium {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .btn-premium:hover {
+    @apply transform scale-105 shadow-lg;
+  }
+}
